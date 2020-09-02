@@ -16,12 +16,12 @@ router.post("/send-email", async (req, res) => {
 `;
 
   let transporter = nodemailer.createTransport({
-    host: "smtp.zoho.com",
+    host: "mail.24d.pe",
     port: 465,
-    secure: true, // true for 465, false for other ports
+    secure: true,
     auth: {
-      user: "contacto@jacreativedes.com", // generated ethereal user
-      pass: "#Stey123", // generated ethereal password
+      user: "info@24d.pe", // generated ethereal user
+      pass: "6vQ5Om3nn2vZ", // generated ethereal password
     },
     tls: {
       rejectUnauthorized: false,
@@ -29,13 +29,13 @@ router.post("/send-email", async (req, res) => {
   });
 
   let info = await transporter.sendMail({
-    from: '"Enviado 👻" <contacto@jacreativedes.com>', // sender address
-    to: "joseche0.ja@gmail.com", // list of receivers
-    subject: "Hello ✔", // Subject line
+    from: '"Enviado 👻" <info@24d.pe>', // sender address
+    to: "ventas@24d.pe", // list of receivers
+    subject: "Nuevo Mensaje desde Web ✔", // Subject line
     html: contentHTML, // html body
   });
 
-  res.redirect("https://jacreativedes.com");
+  res.redirect("24d.pe");
 });
 
 module.exports = router;
